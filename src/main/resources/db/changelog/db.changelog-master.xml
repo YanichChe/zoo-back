@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="DDL-000" author="YanichChe">
+        <sqlFile path="db/changelog/DDL/V1__create_tables.sql" splitStatements="false"/>
+    </changeSet>
+    <changeSet id="DDL-001" author="YanichChe">
+        <sqlFile path="db/changelog/DDL/V2__create_views.sql" splitStatements="false"/>
+    </changeSet>
+    <changeSet id="DDL-002" author="YanichChe">
+        <sqlFile path="db/changelog/DDL/V3__create_functions.sql" splitStatements="false"/>
+    </changeSet>
+    <changeSet id="DDL-003" author="YanichChe">
+        <sqlFile path="db/changelog/DDL/V4__create_triggers.sql" splitStatements="false"/>
+    </changeSet>
+    <changeSet id="DDL-004" author="YanichChe">
+        <sqlFile path="db/changelog/DDL/V5__add_base_inserts.sql" splitStatements="false"/>
+    </changeSet>
+    <changeSet id="DDL-005" author="YanichChe">
+        <sqlFile path="db/changelog/DDL/V6__update_photos.sql" splitStatements="false"/>
+    </changeSet>
+    <changeSet id="DDL-006" author="YanichChe">
+        <sqlFile path="db/changelog/DDL/V7__update_staff_table.sql" splitStatements="false"/>
+    </changeSet>
+</databaseChangeLog>
