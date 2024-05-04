@@ -13,6 +13,7 @@ VALUES (1, 'Ветеринары'),
  (3, 'Дрессировщики'),
  (4, 'Строители-работники'),
  (5, 'Работники администрации');
+ALTER SEQUENCE public.staff_type_id_seq RESTART WITH 6;
 
 INSERT INTO public.gender (id, gender) 
 VALUES (1, 'FEMALE'),
@@ -26,6 +27,7 @@ VALUES (1, 'Яна', 'Шукшина', 'Александровна', '1999-01-01
 (5, 'Константин', 'Маяковский', 'Владиславович', '2000-01-30', 2),
 (6, 'Алексей', 'Ким', 'Алексеевич', '1987-05-05', 2),
 (7, 'Роман', 'Гоголь', 'Максимович', '1988-07-04', 2);
+ALTER SEQUENCE public.staff_id_seq RESTART WITH 8;
 
 INSERT INTO public.staff_history (staff_id, date_start, date_end, salary, staff_type) 
 VALUES (2, '2020-01-01', null, 30000.00, 1),
@@ -45,6 +47,7 @@ VALUES (1, 'Доступ в клетку'),
  (5, 'Доступ к инветарю'),
  (6, 'Доступ к строй-материалам'),
  (7, 'Дрессировать');
+ALTER SEQUENCE public.authority_id_seq RESTART WITH 8;
 
 INSERT INTO public.authority_staff_type (authority_id, staff_type_id) 
 VALUES (1, 1),
@@ -67,11 +70,13 @@ VALUES (1, true, 'Экваториальный'),
  (5, true, 'Умеренный'),
  (6, false, 'Субарктический'),
  (7, false, 'Арктический');
+ALTER SEQUENCE public.climate_zones_id_seq RESTART WITH 8;
 
 INSERT INTO public.nutrition_type (id, type) 
 VALUES (1, 'Травоядный'),
        (2, 'Хищник'),
        (3, 'Всеядный');
+ALTER SEQUENCE public.nutrition_type_id_seq RESTART WITH 4;
 
 INSERT INTO public.animals (id, animal_title, climate_zone_id, nutrition_type_id) 
 VALUES (1, 'Лев', 1, 2),
@@ -100,6 +105,7 @@ VALUES (1, 'Лев', 1, 2),
  (24, 'Игуана', 4, 3),
  (25, 'Лось', 5, 1),
  (26, 'Волк', 6, 2);
+ALTER SEQUENCE public.animals_id_seq RESTART WITH 27;
 
 INSERT INTO public.files (id, path) 
 VALUES (1, 'photos/anaconda.jpg'),
@@ -136,9 +142,11 @@ VALUES (1, 'photos/anaconda.jpg'),
 (32, 'photos/man2.jpeg'),
 (33, 'photos/man3.jpeg'),
 (34, 'photos/man4.jpeg');
+ALTER SEQUENCE public.files_id_seq RESTART WITH 35;
 
 INSERT INTO public.physical_state (id, state) 
 VALUES (1, 'Здоров'), (2, 'Болен');
+ALTER SEQUENCE public.physical_state_id_seq RESTART WITH 2;
 
 INSERT INTO public.individuals (id, name, date, animal_id, is_alive, height, weight, physical_state_id, photo_id, gender_id) 
 VALUES (1, 'Гога', '2018-01-01', 1, true, 30, 10, 1, 4, 1),
@@ -165,6 +173,7 @@ VALUES (1, 'Гога', '2018-01-01', 1, true, 30, 10, 1, 4, 1),
  (22, 'Муша', '2023-01-01', 24, true, 0, 0, 1, 4, 1),
  (23, 'Каш', '2022-01-01', 25, true, 0, 0, 1, 4, 2),
  (24, 'Куш', '2023-01-01', 26, true, 0, 0, 1, 4, 2);
+ALTER SEQUENCE public.individuals_id_seq RESTART WITH 25;
 
 INSERT INTO public.prohibited_combinations_settlement (animal_id_1, animal_id_2) 
 VALUES (1, 5),
@@ -194,12 +203,14 @@ VALUES (1, 2, 1, 1, 1),
  (14, 2, 2, 2, 2),
  (15, 2, 2, 3, 2),
  (16, 2, 2, 4, 2);
+ALTER SEQUENCE public.diet_characteristics_id_seq RESTART WITH 17;
 
 INSERT INTO public.feed_type (id, type) 
 VALUES (1, 'Растительный'),
  (2, 'Живой'),
  (3, 'Мясо'),
  (4, 'Комбикорм');
+ALTER SEQUENCE public.feed_type_id_seq RESTART WITH 5;
 
 INSERT INTO public.food (id, food_name, feed_type_id, self_sufficiency) 
 VALUES (1, 'Яблоко', 1, false),
@@ -212,20 +223,25 @@ VALUES (1, 'Яблоко', 1, false),
  (8, 'Птица', 2, false),
  (9, 'Корм для рыб', 2, false),
  (10, 'Комбикорм', 3, false);
+ALTER SEQUENCE public.food_id_seq RESTART WITH 11;
 
 INSERT INTO public.dimension (id, dimension) 
 VALUES (1, 'кг'),
  (2, 'сток'),
  (3, 'лопата'),
  (4, 'ведро');
+ALTER SEQUENCE public.dimension_id_seq RESTART WITH 5;
 
-INSERT INTO public.diet (id, diet_characteristics_id, food_id, count, dimension_id, time) VALUES (1, 1, 2, 3, 4, '04:05:06');
+INSERT INTO public.diet (id, diet_characteristics_id, food_id, count, dimension_id, time)
+VALUES (1, 1, 2, 3, 4, '04:05:06');
+ALTER SEQUENCE public.diet_id_seq RESTART WITH 2;
 
 INSERT INTO public.food_providers (id, provider) 
 VALUES (1, 'ООО ФудСтрит'),
  (2, 'ПАО Фуд'),
  (3, 'ООО АниЛав'),
  (4, 'Зоопарк');
+ALTER SEQUENCE public.food_providers_id_seq RESTART WITH 5;
 
 INSERT INTO public.provider_history (id, date, food_id, provider_id, number, dimension_id, price)
 VALUES (1, '2019-01-01 00:00:00.000000 +00:00', 1, 1, 3, 1, 1545.52),
@@ -250,11 +266,13 @@ VALUES (1, '2019-01-01 00:00:00.000000 +00:00', 1, 1, 3, 1, 1545.52),
  (20, '2020-01-01 00:00:00.000000 +00:00', 9, 1, 33, 1, 5000.52),
  (21, '2021-01-01 00:00:00.000000 +00:00', 10, 2, 35, 1, 4823.52),
  (22, '2022-01-01 00:00:00.000000 +00:00', 1, 2, 50, 1, 8529.52);
+ALTER SEQUENCE public.provider_history_id_seq RESTART WITH 23;
 
 INSERT INTO public.vaccinations (id, vaccination_name) 
 VALUES (1, 'АнтиГрипп'),
  (2, 'СтопАнгин'),
  (3, 'АнтиБлох');
+ALTER SEQUENCE public.vaccinations_id_seq RESTART WITH 4;
 
 INSERT INTO public.individuals_vaccinations (individual_id, vaccination_id, date, staff_id) 
 VALUES (2, 1, '2024-01-01', 2),
@@ -308,6 +326,7 @@ VALUES (1, 'Лишай'),
  (28, 'Болезнь щитовидки'),
  (29, 'Насморк'),
  (30, 'Перелом');
+ALTER SEQUENCE public.disease_id_seq RESTART WITH 31;
 
 INSERT INTO public.disease_history (id, individual_id, date_start, date_end, disease_id) 
 VALUES (1, 2, '2022-01-01', '2021-02-01', 5),
@@ -319,13 +338,16 @@ VALUES (1, 2, '2022-01-01', '2021-02-01', 5),
  (8, 15, '2022-08-05', '2022-09-03', 3),
  (9, 23, '2023-05-09', '2023-08-09', 4),
  (3, 3, '2023-01-01', '2023-01-12', 2);
+ALTER SEQUENCE public.disease_history_id_seq RESTART WITH 10;
 
 INSERT INTO public.offspring_factors (id, animal_id, physical_state_id, age_start, age_end) 
 VALUES (1, 1, 1, 2, 20),
        (2, 1, 2, 10, 15);
+ALTER SEQUENCE public.offspring_factors_id_seq RESTART WITH 3;
 
 INSERT INTO public.type_relationship (id, relationship) 
 VALUES (1, 'Брат/Сестра'),(2, 'Мать/Ребенок'),(3, 'Отец/Ребенок');
+ALTER SEQUENCE public.type_relationship_id_seq RESTART WITH 2;
 
 INSERT INTO public.cell_history (id, individual_id, date_start, date_end, cell_number) 
 VALUES (57, 1, '2021-01-01', null, 2),
@@ -354,6 +376,7 @@ VALUES (57, 1, '2021-01-01', null, 2),
  (63, 6, '2016-01-01', null, 7),
  (61, 4, '2024-01-01', null, 5),
  (64, 7, '2020-02-01', null, 8);
+ALTER SEQUENCE public.cell_history_id_seq RESTART WITH 90;
 
 INSERT INTO public.responsible_animals (staff_id, individual_id, date_start, date_end) 
 VALUES (1, 1, '2020-01-01', null),
@@ -419,6 +442,7 @@ VALUES (1, 'Родился в зоопарке'),
        (2, 'Обмен в другой зоопарк'),
        (3, 'Отдан в другой зоопарк'),
        (4, 'Обмен из другого зоопарка');
+ALTER SEQUENCE public.individual_receipt_status_id_seq RESTART WITH 5;
 
 INSERT INTO public.zoos (id, name) VALUES (1, 'Текущий зоопарк'), (2, 'Новосибирский зоопарк');
 
@@ -448,7 +472,4 @@ VALUES (1, '2020-01-01', 1, 4, 2),
  (23, '2022-01-01', 23, 1, 1),
  (24, '2023-01-01', 24, 1, 1),
  (25, '2023-01-01', 3, 1, 1);
-
-
-
-
+ALTER SEQUENCE public.individual_history_id_seq RESTART WITH 26;

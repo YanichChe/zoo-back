@@ -6,10 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.MimeTypeUtils;
 import org.springframework.web.bind.annotation.*;
 import ru.nsu.ccfit.chernovskaya.zoo.animal.dto.IndividualDto;
-import ru.nsu.ccfit.chernovskaya.zoo.animal.dto.IndividualResponse;
+import ru.nsu.ccfit.chernovskaya.zoo.animal.dto.IndividualRequest;
 import ru.nsu.ccfit.chernovskaya.zoo.animal.service.AnimalService;
 import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -46,5 +47,11 @@ public class AnimalController {
     @GetMapping(ApiPathUtils.TITLES)
     public ResponseEntity<List<String>> getAllAnimalsTitle() {
         return ResponseEntity.ok(animalService.getAllAnimalsTitle());
+    }
+
+    @PostMapping
+    public ResponseEntity<Object> saveAnimal(@ModelAttribute IndividualRequest individualRequest) throws IOException {
+        animalService.saveAnimal(individualRequest);
+        return ResponseEntity.ok().build();
     }
 }

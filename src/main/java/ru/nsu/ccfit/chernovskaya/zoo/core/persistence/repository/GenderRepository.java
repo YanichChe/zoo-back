@@ -6,6 +6,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import ru.nsu.ccfit.chernovskaya.zoo.core.persistence.entity.Gender;
 import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
+import java.util.Optional;
+
 @RepositoryRestResource(collectionResourceRel = ApiPathUtils.GENDER, path = ApiPathUtils.GENDER)
 public interface GenderRepository extends PagingAndSortingRepository<Gender, Integer> {
+    Optional<Gender> findById(Integer id);
 }
