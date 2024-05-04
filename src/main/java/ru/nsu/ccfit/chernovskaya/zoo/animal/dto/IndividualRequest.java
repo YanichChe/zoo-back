@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.time.LocalDate;
 
@@ -20,5 +21,5 @@ public class IndividualRequest {
     private int gender;
     private Float height;
     private Float weight;
-    private MultipartFile image;
+    @JsonIgnore private MultipartFile image;
 }

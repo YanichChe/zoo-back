@@ -54,4 +54,17 @@ public class AnimalController {
         animalService.saveAnimal(individualRequest);
         return ResponseEntity.ok().build();
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateAnimal(@ModelAttribute IndividualRequest individualRequest, @PathVariable Integer id) throws IOException {
+        log.info(individualRequest.toString());
+        animalService.updateAnimal(individualRequest, id);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> deleteAnimal(@PathVariable Integer id) {
+        animalService.deleteAnimal(id);
+        return ResponseEntity.ok().build();
+    }
 }

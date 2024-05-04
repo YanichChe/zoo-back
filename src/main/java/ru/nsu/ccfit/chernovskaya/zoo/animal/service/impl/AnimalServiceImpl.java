@@ -106,6 +106,42 @@ public class AnimalServiceImpl implements AnimalService {
         individualRepository.save(individual);
     }
 
+    @Override
+    public void deleteAnimal(int id) {
+        Individual individual = individualRepository.findById(id).orElseThrow(NullPointerException::new);
+        individualRepository.delete(individual);
+    }
+
+    @Override
+    public void updateAnimal(@NonNull IndividualRequest animal, int id) throws IOException {
+        Individual individual = individualRepository.findById(id).orElseThrow(NullPointerException::new);
+        individual.setName(animal.getName());
+        individual.setDate(animal.getDate());
+        individual.setIsAlive(animal.getIsAlive());
+
+        Gender gender = genderRepository.findById(animal.getGender()).orElseThrow(NullPointerException::new);
+        individual.setGender(gender);
+        individual.setHeight(animal.getHeight());
+        individual.setWeight(animal.getWeight());
+        individual.setId(id);
+
+        Animal animal_ = animalRepository.findByAnimalTitle(animal.getAnimalTitle()).orElseThrow(NullPointerException::new);
+
+        individual.setAnimal(animal_);
+        individual.setPhysicalState(physicalStateRepository.findById(1).orElseThrow());
+
+        if (animal.getImage() != null) {
+            log.info("not null");
+            String filePath = saveImageToStorage(animal.getImage());
+            File file = new File();
+            file.setPath("photos/" + filePath);
+            fileRepository.save(file);
+            individual.setPhoto(file);
+        }
+
+        individualRepository.save(individual);
+    }
+
     private String saveImageToStorage(MultipartFile imageFile) throws IOException {
         String uniqueFileName = UUID.randomUUID() + "_" + imageFile.getOriginalFilename();
 

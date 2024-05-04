@@ -1,6 +1,5 @@
 package ru.nsu.ccfit.chernovskaya.zoo.animal.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,4 +26,5 @@ public class IndividualDto implements Serializable {
     private Float weight;
     private int photoId;
     private int pages;
+    private int id;
 }
