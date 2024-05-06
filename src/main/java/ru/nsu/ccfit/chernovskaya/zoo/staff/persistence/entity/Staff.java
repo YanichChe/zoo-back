@@ -3,6 +3,7 @@ package ru.nsu.ccfit.chernovskaya.zoo.staff.persistence.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import ru.nsu.ccfit.chernovskaya.zoo.core.persistence.entity.File;
@@ -18,6 +19,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
+@ToString
 @Table(name = "staff")
 public class Staff {
     @Id
