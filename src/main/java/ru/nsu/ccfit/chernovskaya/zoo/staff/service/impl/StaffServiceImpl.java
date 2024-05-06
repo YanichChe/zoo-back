@@ -70,6 +70,7 @@ public class StaffServiceImpl implements StaffService {
         List<StaffDto> staffDtos = new ArrayList<>();
         for (Staff staff : staffs) {
             StaffDto staffDto = staffMapper.map(staff);
+            staffDto.setId(staff.getId());
             staffDto.setStaffType(getLastStaffType(staff));
             staffDtos.add(staffDto);
 
@@ -118,7 +119,6 @@ public class StaffServiceImpl implements StaffService {
 
         Gender gender = genderRepository.findById(staffRequest.getGender()).orElseThrow(NullPointerException::new);
         staff.setGender(gender);
-
 
         staffRepository.save(staff);
     }
