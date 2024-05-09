@@ -8,4 +8,5 @@ import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
 @RepositoryRestResource(collectionResourceRel = ApiPathUtils.INDIVIDUAL_HISTORY, path = ApiPathUtils.INDIVIDUAL_HISTORY)
 public interface IndividualHistoryRepository extends PagingAndSortingRepository<IndividualHistory, Integer> {
+    IndividualHistory findById(Integer id);
 }

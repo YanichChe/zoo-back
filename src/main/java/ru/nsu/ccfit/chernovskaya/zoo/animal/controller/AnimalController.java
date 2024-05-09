@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = ApiPathUtils.ANIMAL, produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
+@RequestMapping(value = ApiPathUtils.ANIMALS, produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
 @Slf4j
 @CrossOrigin

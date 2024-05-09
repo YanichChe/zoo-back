@@ -19,7 +19,7 @@ public class DiseaseHistory {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "individual_id")
     private Individual individual;
@@ -30,7 +30,7 @@ public class DiseaseHistory {
     @Column(name = "date_end", nullable = false)
     private LocalDate dateEnd;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = "disease_id")
     private Disease disease;

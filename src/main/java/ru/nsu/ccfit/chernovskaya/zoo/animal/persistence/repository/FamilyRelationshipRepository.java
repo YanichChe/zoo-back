@@ -8,4 +8,5 @@ import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
 @RepositoryRestResource(collectionResourceRel = ApiPathUtils.FAMILY_RELATIONSHIP, path = ApiPathUtils.FAMILY_RELATIONSHIP)
 public interface FamilyRelationshipRepository extends PagingAndSortingRepository<FamilyRelationship, Integer> {
+    FamilyRelationship findById(Integer id);
 }

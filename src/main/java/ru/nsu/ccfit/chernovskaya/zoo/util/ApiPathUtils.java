@@ -5,17 +5,19 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ApiPathUtils {
-    public static final String ANIMAL = "/animals";
+    public static final String ANIMALS = "/animals";
+    public static final String ANIMAL = "general-animal";
     public static final String INDIVIDUAL = "/individual";
     public static final String TITLES = "/titles";
     public static final String STAFFS = "/staffs";
     public static final String CELL_HISTORY = "cell-history";
     public static final String DISEASE_HISTORY = "disease-history";
-    public static final String FAMILY_RELATIONSHIP = "family-relationship";
+    public static final String FAMILY_RELATIONSHIP = "family-relationships";
+    public static final String INDIVIDUALS = "individuals";
     public static final String INDIVIDUAL_HISTORY = "individual-history";
-    public static final String INDIVIDUAL_RECEIPT_HISTORY = "individual-receipt-history";
+    public static final String INDIVIDUAL_RECEIPT_STATUS = "individual-receipt-status";
     public static final String INDIVIDUAL_VACCINATION = "individual-vaccination";
-    public static final String OFFSPRING_FACTOR = "offspring-factory";
+    public static final String OFFSPRING_FACTOR = "offspring-factors";
     public static final String PROHIBITED_COMBINATION = "prohibited-combination";
     public static final String CLIMATE_ZONE = "climate-zone";
     public static final String DIMENSION = "dimension";

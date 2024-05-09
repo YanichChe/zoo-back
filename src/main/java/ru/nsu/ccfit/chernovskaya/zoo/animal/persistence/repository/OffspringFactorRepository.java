@@ -8,4 +8,5 @@ import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
 @RepositoryRestResource(collectionResourceRel = ApiPathUtils.OFFSPRING_FACTOR, path = ApiPathUtils.OFFSPRING_FACTOR)
 public interface OffspringFactorRepository extends PagingAndSortingRepository<OffspringFactor, Integer> {
+    OffspringFactor findById(Integer id);
 }

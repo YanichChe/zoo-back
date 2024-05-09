@@ -27,12 +27,12 @@ public class Animal {
     @Column(name = "animal_title", nullable = false)
     private String animalTitle;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.SET_NULL)
     @JoinColumn(name = "climate_zone_id")
     private ClimateZone climateZone;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.SET_NULL)
     @JoinColumn(name = "nutrition_type_id")
     private NutritionType nutritionType;

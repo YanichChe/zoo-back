@@ -17,18 +17,18 @@ public class IndividualsVaccination {
     private IndividualsVaccinationId id;
 
     @MapsId("individualId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "individual_id", nullable = false)
     private Individual individual;
 
     @MapsId("vaccinationId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = "vaccination_id", nullable = false)
     private Vaccination vaccination;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = "staff_id")
     private Staff staff;
