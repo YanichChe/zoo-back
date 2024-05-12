@@ -8,4 +8,5 @@ import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
 @RepositoryRestResource(collectionResourceRel = ApiPathUtils.FOOD_PROVIDERS, path = ApiPathUtils.FOOD_PROVIDERS)
 public interface FoodProviderRepository extends PagingAndSortingRepository<FoodProvider, Integer> {
+    FoodProvider findById(Integer id);
 }

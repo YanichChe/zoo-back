@@ -24,12 +24,12 @@ public class ProviderHistory {
     @Column(name = "date", nullable = false)
     private OffsetDateTime date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.SET_NULL)
     @JoinColumn(name = "food_id")
     private Food food;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = "provider_id")
     private FoodProvider provider;
@@ -37,7 +37,7 @@ public class ProviderHistory {
     @Column(name = "number")
     private Integer number;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = "dimension_id")
     private Dimension dimension;

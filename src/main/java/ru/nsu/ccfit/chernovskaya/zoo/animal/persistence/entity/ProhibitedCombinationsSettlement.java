@@ -15,13 +15,13 @@ public class ProhibitedCombinationsSettlement {
     private ProhibitedCombinationsSettlementId id;
 
     @MapsId("animalId1")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "animal_id_1", nullable = false)
     private Animal animalId1;
 
     @MapsId("animalId2")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "animal_id_2", nullable = false)
     private Animal animalId2;

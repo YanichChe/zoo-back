@@ -8,4 +8,5 @@ import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
 @RepositoryRestResource(collectionResourceRel = ApiPathUtils.PROVIDER_HISTORY, path = ApiPathUtils.PROVIDER_HISTORY)
 public interface ProviderHistoryRepository extends PagingAndSortingRepository<ProviderHistory, Integer> {
+    ProviderHistory findById(Integer id);
 }
