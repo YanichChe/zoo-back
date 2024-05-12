@@ -24,7 +24,7 @@ public class Food {
     @Column(name = "food_name", nullable = false)
     private String foodName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.SET_NULL)
     @JoinColumn(name = "feed_type_id")
     private FeedType feedType;

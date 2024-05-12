@@ -8,4 +8,5 @@ import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
 @RepositoryRestResource(collectionResourceRel = ApiPathUtils.VACCINATION, path = ApiPathUtils.VACCINATION)
 public interface VaccinationRepository extends PagingAndSortingRepository<Vaccination, Integer> {
+    Vaccination findById(Integer id);
 }

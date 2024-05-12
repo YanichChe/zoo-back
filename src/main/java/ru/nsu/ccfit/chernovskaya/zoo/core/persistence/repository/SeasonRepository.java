@@ -8,4 +8,5 @@ import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
 @RepositoryRestResource(collectionResourceRel = ApiPathUtils.SEASON, path = ApiPathUtils.SEASON)
 public interface SeasonRepository extends PagingAndSortingRepository<Season, Integer> {
+    Season findById(Integer id);
 }

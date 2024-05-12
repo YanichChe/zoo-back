@@ -8,4 +8,5 @@ import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
 @RepositoryRestResource(collectionResourceRel = ApiPathUtils.CLIMATE_ZONE, path = ApiPathUtils.CLIMATE_ZONE)
 public interface ClimateZoneRepository extends PagingAndSortingRepository<ClimateZone, Integer> {
+    ClimateZone findById(Integer id);
 }

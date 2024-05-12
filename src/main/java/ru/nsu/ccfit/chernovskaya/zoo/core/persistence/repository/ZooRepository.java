@@ -8,4 +8,5 @@ import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
 @RepositoryRestResource(collectionResourceRel = ApiPathUtils.ZOO, path = ApiPathUtils.ZOO)
 public interface ZooRepository extends PagingAndSortingRepository<Zoo, Integer> {
+    Zoo findById(Integer id);
 }
