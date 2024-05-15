@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ApiPathUtils {
+    public static final String ACCESS_ANIMAL = "access-animals";
+    public static final String STAFF_LIST = "staff-list";
     public static final String ANIMALS = "/animals";
     public static final String ANIMAL = "general-animal";
     public static final String INDIVIDUAL = "/individual";
@@ -42,6 +44,5 @@ public class ApiPathUtils {
     public static final String STAFF_HISTORY = "staff-history";
     public static final String STAFF_TYPE = "staff-type";
     public static final String STAFF_TYPE_ATTRIBUTES = "staff-type-attributes";
-    public static final String ACCESS_ANIMAL = "access-animal";
     public static final String RESPONSE_ANIMAL = "response-animal";
 }

@@ -19,18 +19,17 @@ public class ResponsibleAnimal {
     private ResponsibleAnimalId id;
 
     @MapsId("staffId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "staff_id", nullable = false)
     private Staff staff;
 
     @MapsId("individualId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "individual_id", nullable = false)
     private Individual individual;
 
     @Column(name = "date_end")
     private LocalDate dateEnd;
-
 }

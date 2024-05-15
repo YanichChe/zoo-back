@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.nsu.ccfit.chernovskaya.zoo.animal.dto.IndividualDto;
 import ru.nsu.ccfit.chernovskaya.zoo.animal.dto.IndividualRequest;
 import ru.nsu.ccfit.chernovskaya.zoo.animal.service.AnimalService;
+import ru.nsu.ccfit.chernovskaya.zoo.staff.persistence.repository.StaffListRepository;
 import ru.nsu.ccfit.chernovskaya.zoo.util.ApiPathUtils;
 
 import java.io.IOException;

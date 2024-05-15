@@ -12,9 +12,9 @@ import ru.nsu.ccfit.chernovskaya.zoo.animal.dto.IndividualRequest;
 import ru.nsu.ccfit.chernovskaya.zoo.animal.persistence.entity.Animal;
 import ru.nsu.ccfit.chernovskaya.zoo.animal.persistence.entity.Individual;
 import ru.nsu.ccfit.chernovskaya.zoo.animal.mapper.AnimalMapper;
-import ru.nsu.ccfit.chernovskaya.zoo.animal.persistence.repository.AnimalRepository;
 import ru.nsu.ccfit.chernovskaya.zoo.animal.persistence.repository.CustomAnimalRepository;
-import ru.nsu.ccfit.chernovskaya.zoo.animal.persistence.repository.IndividualRepository;
+import ru.nsu.ccfit.chernovskaya.zoo.animal.persistence.repository.SpecAnimalRepository;
+import ru.nsu.ccfit.chernovskaya.zoo.animal.persistence.repository.SpecIndividualRepository;
 import ru.nsu.ccfit.chernovskaya.zoo.animal.service.AnimalService;
 import ru.nsu.ccfit.chernovskaya.zoo.core.persistence.entity.File;
 import ru.nsu.ccfit.chernovskaya.zoo.core.persistence.entity.Gender;
@@ -44,8 +44,8 @@ public class AnimalServiceImpl implements AnimalService {
     private static final Logger log = LoggerFactory.getLogger(AnimalServiceImpl.class);
 
     private final AnimalMapper animalMapper;
-    private final IndividualRepository individualRepository;
-    private final AnimalRepository animalRepository;
+    private final SpecIndividualRepository individualRepository;
+    private final SpecAnimalRepository animalRepository;
     private final CustomAnimalRepository customAnimalRepository;
     private final PhysicalStateRepository physicalStateRepository;
     private final FileRepository fileRepository;

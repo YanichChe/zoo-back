@@ -20,7 +20,7 @@ import ru.nsu.ccfit.chernovskaya.zoo.staff.persistence.entity.Staff;
 import ru.nsu.ccfit.chernovskaya.zoo.staff.persistence.entity.StaffHistory;
 import ru.nsu.ccfit.chernovskaya.zoo.staff.persistence.repository.CustomStaffRepository;
 import ru.nsu.ccfit.chernovskaya.zoo.staff.persistence.repository.StaffHistoryRepository;
-import ru.nsu.ccfit.chernovskaya.zoo.staff.persistence.repository.StaffRepository;
+import ru.nsu.ccfit.chernovskaya.zoo.staff.persistence.repository.StaffListRepository;
 import ru.nsu.ccfit.chernovskaya.zoo.staff.service.StaffService;
 
 import java.io.IOException;
@@ -47,7 +47,7 @@ import static ru.nsu.ccfit.chernovskaya.zoo.util.SpecPageSortUtil.generateStaffS
 public class StaffServiceImpl implements StaffService {
     private static final String uploadDirectory = "/home/tc/IdeaProjects/zoo/photos/";
     private static final List<String> availableSortFields = List.of("nameasc", "namedesc", "surnameasc", "surnamedesc");
-    private final StaffRepository staffRepository;
+    private final StaffListRepository staffRepository;
     private final StaffMapper staffMapper;
     private final CustomStaffRepository customStaffRepository;
     private final FileRepository fileRepository;

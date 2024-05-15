@@ -1,6 +1,7 @@
 package ru.nsu.ccfit.chernovskaya.zoo.staff_animal.persistence.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
@@ -19,13 +20,13 @@ public class AccessAnimal {
     private AccessAnimalId id;
 
     @MapsId("staffId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "staff_id", nullable = false)
     private Staff staff;
 
     @MapsId("individualId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "individual_id", nullable = false)
     private Individual individual;
