@@ -14,4 +14,7 @@ public interface AccessAnimalRepository extends PagingAndSortingRepository<Acces
 
     @RestResource
     AccessAnimal save(AccessAnimal accessAnimal);
+
+    @RestResource
+    void delete(AccessAnimal accessAnimal);
 }
