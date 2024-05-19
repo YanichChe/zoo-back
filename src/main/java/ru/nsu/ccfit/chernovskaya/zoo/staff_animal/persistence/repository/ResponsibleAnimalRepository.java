@@ -12,7 +12,7 @@ public interface ResponsibleAnimalRepository extends PagingAndSortingRepository<
     ResponsibleAnimal findById(ResponsibleAnimalId id);
 
     @RestResource
-    ResponsibleAnimal save(ResponsibleAnimal accessAnimal);
+    ResponsibleAnimal save(ResponsibleAnimal responsibleAnimal);
 
     @RestResource
     void delete(ResponsibleAnimal responsibleAnimal);
