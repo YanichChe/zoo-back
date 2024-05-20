@@ -192,3 +192,20 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+CREATE FUNCTION prevent_individual_vaccination()
+    RETURNS TRIGGER AS
+$$
+BEGIN
+    IF NOT EXISTS(select staff_id, staff_type.type, authority_id
+                  from staff_history
+                           join staff_type on staff_history.staff_type = staff_type.id
+                           JOIN authority_staff_type ON staff_type.id = authority_staff_type.staff_type_id
+                  where staff_id = NEW.staff_id
+                    and ((date_start <= NEW.date AND NEW.date <= date_end)
+                      or (NEW.date >= date_start AND date_end is null))
+                    and authority_id = 3) THEN
+        RAISE EXCEPTION 'Данный сотрудник не может ставить прививки';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;

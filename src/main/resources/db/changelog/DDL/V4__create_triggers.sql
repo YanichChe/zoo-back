@@ -55,3 +55,9 @@ create trigger check_live_food_trigger
     on public.diet
     for each row
 execute procedure public.prevent_live_food_insert();
+
+create trigger check_individual_vaccination
+    before insert or update
+    on public.individuals_vaccinations
+    for each row
+execute procedure public.prevent_individual_vaccination();
