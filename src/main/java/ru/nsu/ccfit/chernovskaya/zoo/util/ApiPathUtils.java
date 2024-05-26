@@ -25,7 +25,6 @@ public class ApiPathUtils {
     public static final String DIMENSION = "dimensions";
     public static final String DISEASE = "diseases";
     public static final String FEED_TYPE = "feed-types";
-    public static final String FILE = "file";
     public static final String FOOD = "foods";
     public static final String GENDER = "gender";
     public static final String NUTRITION_TYPE = "nutrition-types";
@@ -45,4 +44,20 @@ public class ApiPathUtils {
     public static final String STAFF_TYPE = "staff-type";
     public static final String STAFF_TYPE_ATTRIBUTES = "staff-type-attributes";
     public static final String RESPONSE_ANIMAL = "response-animal";
+    public static final String ACTUAL_STAFF = "actual-staff-info";
+    public static final String RESPONSIBLE_ANIMALS = "responsible-animals";
+    public static  final String AnimalsCells = "animals-cells-info";
+    public static final String CompatibleTypesRepo = "compatible-type";
+    public static final String DiseaseData = "disease-data";
+    public static final String FullDiseaseInfo = "full-disease-info";
+    public static final String FullVaccinationInfo = "full-vaccination-info";
+    public static final String IndividualHistoryInfo = "individual-history-info";
+    public static final String NeedOverpower = "need-overpower";
+    public static final String NeedWarmRoom = "need-warm-room";
+    public static final String OffspringInfo = "offspring-info";
+    public static final String ProviderHistoryInfo = "provider-history-info";
+    public static final String ProviderHistoryZoo = "provider-history-zoo";
+    public static final String StaffAccess = "staff-access";
+    public static final String VaccinationData = "vaccination-data";
+    public static final String ANIMAL_TYPE_FOOD = "animal-type-food";
 }
